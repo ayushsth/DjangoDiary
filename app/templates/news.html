@@ -1,0 +1,60 @@
+{% extends 'layouts/app.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'news_style.css' %}">
+<h1 class="mt-4 mb-4">Latest News From Around the World</h1>
+
+{% for title, description, image, link in news_list %}
+  <div class="card border-primary container">
+    <img src="{{ image }}" class="card-img-top" alt="News Image">
+    <div class="card-body">
+      <h4><span class="badge badge-primary">Headline:</span></h4>
+      <h5>
+        <a href="{{ link }}" target="_blank" class="text-decoration-none">
+          {{ title|linebreaks }}
+        </a>
+      </h5>
+      <h4><span class="badge badge-success">Description:</span></h4>
+      <h5>{{ description|linebreaks }}</h5>
+    </div>
+  </div>
+{% endfor %}
+
+<!-- Navigation Bar -->
+<nav class="navbar fixed-top navbar-dark bg-dark">
+  <div class="container">
+    <h4 class="text-white mb-0">News App</h4>
+    <h4 class="text-success mb-0 ml-2">DJANGO FRAMEWORK</h4>
+  </div>
+</nav>
+
+<!-- Header Section -->
+<!-- <div class="jumbotron text-center" style="margin-top: 80px;">
+  <h2>Latest News using 
+    <a href="https://newsapi.org" class="text-decoration-none">news API</a>
+  </h2>
+  <img src="{% static 'images/news.png' %}" alt="News" class="image" style="width: 150px; margin-top: 20px;">
+</div> -->
+
+<!-- Pagination and Navigation Section -->
+<div class="pagination-container">
+  <div class="pagination-controls">
+    {% if news_list.has_previous %}
+      <a href="?page=1">&laquo; First</a>
+      <a href="?page={{ news_list.previous_page_number }}">Previous</a>
+    {% endif %}
+
+    <span>Page {{ news_list.number }} of {{ news_list.paginator.num_pages }}</span>
+
+    {% if news_list.has_next %}
+      <a href="?page={{ news_list.next_page_number }}">Next</a>
+      <a href="?page={{ news_list.paginator.num_pages }}">Last &raquo;</a>
+    {% endif %}
+  </div>
+  <div class="dashboard-link">
+    <a href="{% url 'dashboard' %}">Back to dashboard</a>
+  </div>
+</div>
+
+{% endblock %}
