@@ -90,7 +90,7 @@ def entry_detail(request,pk):
     return render(request, 'entry_detail.html', {'entry': entry})
 
 def news_index(request):
-    newsApi= NewsApiClient(api_key='34eff59231f8493581a00fee309d1eca')
+    newsApi= NewsApiClient(api_key='#YOUR_API_KEY')
 
     sources = 'bbc-news,cnn,techcrunch'
     headlines=newsApi.get_top_headlines(sources=sources)
