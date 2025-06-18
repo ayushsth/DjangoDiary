@@ -5,10 +5,6 @@ This is my first Django project, created to explore and showcase key backend dev
 
 ## Features
 
-- **User Authentication** (Register / Login / Logout)
-- **Personal Diary** – Add, view, edit, and delete your daily entries
-- **Live News Feed** – Get current world headlines using the News API
-
 - **User Authentication System**- Secure Register, Login and Logout system.
 - **Personal Diary** – Users can add, view, edit, and delete their personal diary entries.
 - **Live News Feed** – Users can be notified about the current world headlines built by using the News API.
