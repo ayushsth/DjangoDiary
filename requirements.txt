@@ -2,4 +2,5 @@
 
 Django==5.0.3
 python-decouple==3.8
+newsapi-python==0.2.7
 requests==2.31.0
