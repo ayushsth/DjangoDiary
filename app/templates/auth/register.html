@@ -1,0 +1,132 @@
+{% extends 'layouts/app.html' %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+    <div class="col-sm-6">
+        <h2 class="text-muted">Register</h2>
+        <form method="POST" action="{% url 'register' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="{{ form.username.id_for_label }}">Username:</label>
+                <input type="text" name="{{ form.username.name }}" class="form-control" value="{{  form.username.value }}">
+                <span class="text-danger">{{ form.username.errors }}</span>
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.password1.id_for_label }}">Password:</label>
+                <input type="password" name="{{ form.password1.name }}" class="form-control" value="{{  form.password1.value }}">
+                <span class="text-danger">{{ form.password1.errors }}</span>
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.password2.id_for_label }}">Confirm Password:</label>
+                <input type="password" name="{{ form.password2.name }}" class="form-control" value="{{  form.password2.value }}">
+                <span class="text-danger">{{ form.password2.errors }}</span>
+            </div>
+
+            <button type="submit" class="btn btn-dark">Submit</button>
+
+            <a href="{% url 'login' %}" class="btn btn-default">Already Have an Account?</a>
+
+        </form>
+    </div>
+</div>
+
+<style>
+    /* Register page styling (similar to login) */
+
+    body {
+    /* background-color: #f5f7fa; */
+    background-color: #d9f0ea;
+    font-family: 'Roboto', Arial, sans-serif;
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    padding-top: 50px;
+    font-size: 18px;
+    }
+
+    .row.justify-content-center {
+    min-height: 80vh; /* vertically center */
+    display: flex;
+    align-items: center;
+    }
+
+    .col-sm-6 {
+    background: white;
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    }
+
+    h2.text-muted {
+    font-weight: 600;
+    margin-bottom: 1.8rem;
+    color: #444;
+    text-align: center;
+    }
+
+    .form-group label {
+    font-weight: 600;
+    color: #555;
+    }
+
+    .form-control {
+    border-radius: 6px;
+    border: 1.5px solid #ccc;
+    padding: 0.6rem 0.8rem;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    }
+
+    .form-control:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 8px rgba(74, 144, 226, 0.3);
+    outline: none;
+    }
+
+    .text-danger {
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+    display: block;
+    }
+
+    button.btn-dark {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    border: none;
+    background-color: #343a40;
+    color: white;
+    transition: background-color 0.3s ease;
+    margin-top: 1.2rem;
+    }
+
+    button.btn-dark:hover {
+    background-color: #23272b;
+    }
+
+    a.btn.btn-default {
+    display: block;
+    margin-top: 1rem;
+    text-align: center;
+    color: #4a90e2;
+    font-weight: 600;
+    text-decoration: none;
+    }
+
+    a.btn.btn-default:hover {
+    text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 576px) {
+    .col-sm-6 {
+        padding: 2rem 1.5rem;
+    }
+    }
+
+</style>
+
+{% endblock %}

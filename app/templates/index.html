@@ -1,0 +1,17 @@
+{% extends 'layouts/app.html' %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="field is-grouped is-grouped-right">
+                <div class="control">
+                    <button type="submit" class="button is-link">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock %}

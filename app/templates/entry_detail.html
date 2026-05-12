@@ -1,0 +1,12 @@
+{% extends 'layouts/app.html' %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <h1 class="title">Diary Entry</h1>
+        <p><strong>{{ entry.created_at|date:"F d, Y h:i A" }}</strong></p>
+        <p>{{ entry.content|linebreaks }}</p>
+        <a href="{% url 'diary' %}">Back to all entries</a>
+    </div>
+</section>
+{% endblock %}

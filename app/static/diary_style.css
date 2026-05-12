@@ -1,0 +1,78 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.hero.is-primary {
+    background-color: #4a90e2;
+    color: white;
+    padding: 2rem 1.5rem;
+    text-align: center;
+}
+
+.hero .title {
+    font-size: 3rem;
+    margin-bottom: 0;
+}
+
+.section {
+    padding: 2rem 1.5rem;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.media {
+    background-color: white;
+    border-radius: 10px;
+    border: 1.5px solid #a0a9b8; /* slightly darker subtle border */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    margin-bottom: 1.8rem;
+    padding: 1.8rem 2rem;
+    transition: box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.media:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    border-color: #4a90e2; /* highlight border on hover */
+}
+
+/* 
+.media {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    transition: box-shadow 0.3s ease;
+}
+
+.media:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+} */
+
+.content strong {
+    font-size: 1rem;
+    color: #4a4a4a;
+}
+
+.content p {
+    margin-top: 0.5rem;
+}
+
+a {
+    color: #3273dc;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+

@@ -1,0 +1,31 @@
+{% extends 'layouts/app.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Optional: custom CSS -->
+<link rel="stylesheet" href="{% static 'dashboard_style.css' %}">
+
+<div class="dashboard-wrapper">
+    <div class="dashboard-header">
+        Dashboard: {{ request.user.username }}
+    </div>
+
+    <div class="container">
+        <h1>Welcome</h1>
+        
+        <div class="card-grid">
+            <a href="{% url 'diary' %}" class="card">
+                <img src="{% static 'images/diary.png' %}" alt="Diary">
+                <p>Diary</p>
+            </a>
+            <a href="{% url 'news' %}" class="card">
+                <img src="{% static 'images/news.png' %}" alt="News">
+                <p>News</p>
+            </a>
+        </div>
+    </div>
+
+    <a href="{% url 'logout' %}" class="btn-dark logout-btn">Logout</a>
+</div>
+
+{% endblock %}
