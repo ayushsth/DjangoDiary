@@ -9,8 +9,6 @@ from .forms import DiaryEntryForm
 from newsapi import NewsApiClient
 from decouple import config
 
-# Import Pagination Stuff
-
 from django.core.paginator import Paginator
 # Create your views here.
 
